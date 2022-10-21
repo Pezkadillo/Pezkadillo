@@ -1,0 +1,66 @@
+#Programa realizado en clases
+
+dolar = 801.6
+euro = 875.4
+uf = 28993.7
+
+def espera():
+        print("presione una tecla para continuar. . .")
+        input()
+def conversion_01(clp):
+    '''
+    Conversion de pesos a dolares
+    La variable clp corresponde a pesos input que seran convertidos en dolares  
+    '''
+    return round(clp / dolar, 2)
+
+def conversion_02(usd):
+    '''
+    Conversion de dolares a pesos
+    La variable usd corresponde a dolares input que seran convertidos en pesos  
+    '''
+    return round(usd * dolar)
+
+
+flag = False
+while not flag:
+    print("Banco Oeste")
+    print("1) Dólares")
+    print("2) Euro")
+    print("3) UF")
+    print("4) Salir")
+    sel = int(input("Seleccione moneda de origen :"))
+    
+
+    if sel == 1:
+        print("seleccionaste opción 1")
+        print("Seleccione direccion de la conversion")
+        print()
+        print("1. Peso Chileno a Dolar")
+        print("2. Dolar a Peso Chileno")
+        sub_select = int (input())
+        if sub_select == 1:
+            print ("Ingrese una cantidad valida de pesos chilenos")
+            pesos = int (input())
+            print (f"Total de dolares despues de la conversion es: {conversion_01(pesos)}")
+            espera()       
+        elif sub_select == 2:
+            print ("Ingrese una cantidad valida de Dolares")
+            dolares = float (input())
+            print (f"Total de pesos despues de la conversion es: {conversion_02(dolares)}")
+            espera()
+        else:
+            print ("Seleccione una opcion valida")
+    elif sel == 2:
+        print ("seleccionaste opción 2")
+        espera()
+    elif sel == 3:
+        print("seleccionaste opción 3")
+        espera()
+    elif sel == 4:
+        print("salimos del programa")
+        espera()
+        flag = True
+    else:
+        print("seleccione una opción del menú")
+        espera()
